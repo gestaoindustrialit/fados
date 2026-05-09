@@ -1,0 +1,1 @@
+<h2>Login</h2><form method="post" action="/login"><input type="hidden" name="_csrf" value="<?=csrf_token()?>"><input class="form-control mb-2" name="email" type="email" placeholder="Email" required><input class="form-control mb-2" name="password" type="password" placeholder="Password" required><button class="btn btn-primary">Entrar</button></form>

@@ -1,0 +1,1 @@
+<h2>As minhas reservas</h2><table class="table"><tr><th>Evento</th><th>Data</th><th>Pessoas</th><th>Estado</th></tr><?php foreach($reservations as $r): ?><tr><td><?=e($r['title'])?></td><td><?=e($r['event_date'])?></td><td><?=$r['number_of_people']?></td><td><span class="badge bg-warning text-dark"><?=e($r['status'])?></span></td></tr><?php endforeach; ?></table>

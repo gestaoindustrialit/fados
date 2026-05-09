@@ -1,0 +1,1 @@
+<h2>Eventos abertos</h2><div class="row"><?php foreach($events as $event): ?><div class="col-md-4"><div class="card mb-3"><div class="card-body"><h5><?=e($event['title'])?></h5><p><?=e($event['event_date'])?> <?=e($event['start_time'])?></p><a class="btn btn-outline-primary btn-sm" href="/event/<?=$event['id']?>">Detalhe</a></div></div></div><?php endforeach; ?></div>

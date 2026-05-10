@@ -7,12 +7,8 @@ return [
         'debug' => true,
     ],
     'db' => [
-        'host' => '127.0.0.1',
-        'port' => 3306,
-        'database' => 'fados',
-        'username' => 'root',
-        'password' => '',
-        'charset' => 'utf8mb4',
+        'driver' => 'sqlite',
+        'database' => __DIR__ . '/../storage/database.sqlite',
     ],
     'smtp' => [
         'host' => 'smtp.example.com',

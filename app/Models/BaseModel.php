@@ -3,11 +3,10 @@
 namespace App\Models;
 
 use App\Core\Database;
-use PDO;
 
 abstract class BaseModel
 {
-    protected PDO $db;
+    protected $db;
 
     public function __construct()
     {

@@ -3,22 +3,29 @@
 Aplicação web em PHP puro (sem framework), MVC, PDO e Bootstrap 5.
 
 ## Requisitos
-- PHP 8.1+
-- MySQL/MariaDB
-- Apache com `mod_rewrite` (ou apontar DocumentRoot para `public/`)
+- PHP 7.3+ com extensão `pdo_sqlite`
+- Apache/Nginx apontando para `public/`
 
-## Instalação
+## Instalação (sem MySQL)
 1. Copiar projeto para servidor.
-2. Criar base de dados (ex: `fados`).
-3. Importar:
-   - `database/schema.sql`
-   - `database/seed.sql`
-4. Editar `config/config.php` (DB e SMTP).
-5. Apontar web root para `public/`.
+2. Garantir permissão de escrita em `storage/`.
+3. Executar:
+   ```bash
+   php install.php
+   ```
+4. Iniciar servidor local para teste:
+   ```bash
+   php -S localhost:8000 -t public
+   ```
+
+A base SQLite é criada automaticamente em `storage/database.sqlite`.
 
 ## Login inicial
 - Email: `admin@admin.com`
 - Password: `admin123`
+
+## SMTP
+Editar `config/config.php` na secção `smtp`.
 
 ## Cron lembretes
 Executar diariamente (exemplo 09:00):
@@ -27,12 +34,3 @@ Executar diariamente (exemplo 09:00):
 ```
 
 Log: `storage/logs/email_reminders.log`
-
-## Rotas principais já implementadas
-- Públicas: `/`, `/events`, `/event/{id}`, `/login`, `/register`
-- Cliente: `/client/dashboard`, `/client/reservations`
-- Admin: `/admin/dashboard`
-
-## Notas
-- Estrutura preparada para expansão das fases (restaurantes, mesas/layout, eventos, pratos, reservas avançadas, emails SMTP com PHPMailer).
-- Inclui CSRF, prepared statements, `password_hash`, sessões e escaping de output.

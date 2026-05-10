@@ -5,7 +5,7 @@ date_default_timezone_set('Europe/Lisbon');
 require __DIR__ . '/../app/Core/Helpers.php';
 spl_autoload_register(function ($class) {
     $prefix = 'App\\';
-    if (str_starts_with($class, $prefix)) {
+    if (strpos($class, $prefix) === 0) {
         $path = __DIR__ . '/../app/' . str_replace('App\\', '', $class) . '.php';
         $path = str_replace('\\', '/', $path);
         if (file_exists($path)) require $path;

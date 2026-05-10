@@ -34,3 +34,17 @@ Executar diariamente (exemplo 09:00):
 ```
 
 Log: `storage/logs/email_reminders.log`
+
+
+## Erro 403 (Forbidden) após instalar
+Se acederes ao projeto e aparecer 403, normalmente o Apache está a apontar para a pasta errada.
+
+Este projeto já inclui:
+- `.htaccess` na raiz para redirecionar para `public/`
+- `public/.htaccess` para enviar rotas para `public/index.php`
+
+Checklist:
+1. Confirma que `mod_rewrite` está ativo no Apache.
+2. Confirma `AllowOverride All` na vhost/pasta do projeto.
+3. Garante permissões de leitura nos ficheiros e execução nas pastas.
+4. Se possível, define DocumentRoot diretamente para `.../public`.
